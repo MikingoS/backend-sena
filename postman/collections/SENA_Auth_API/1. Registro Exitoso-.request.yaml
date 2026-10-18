@@ -1,0 +1,5 @@
+$kind: http-request
+name: 1. Registro Exitoso.
+url: ""
+method: GET
+order: 1000

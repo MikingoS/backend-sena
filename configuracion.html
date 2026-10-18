@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StockFlow - Configuración</title>
+    
+    <!-- Importar fuente League Spartan -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Importar librería de iconos FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="layout-container">
+        
+        <!-- SIDEBAR DE NAVEGACIÓN -->
+        <aside class="sidebar">
+            <h2 class="logo">StockFlow</h2>
+            <ul class="menu">
+                <li>
+                    <a href="dashboard.html" class="menu-item">
+                        <i class="fa-solid fa-user"></i> Usuarios
+                    </a>
+                </li>
+                <li>
+                    <a href="stock.html" class="menu-item">
+                        <i class="fa-solid fa-chart-simple"></i> Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a href="inventario.html" class="menu-item">
+                        <i class="fa-solid fa-box"></i> Inventario
+                    </a>
+                </li>
+                <li>
+                    <a href="movimientos.html" class="menu-item">
+                        <i class="fa-solid fa-arrows-rotate"></i> Movimientos
+                    </a>
+                </li>
+                <!-- La clase "active" está en Configuración porque es la página actual -->
+                <li>
+                    <a href="configuracion.html" class="menu-item active">
+                        <i class="fa-solid fa-gear"></i> Configuración
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- CONTENIDO PRINCIPAL -->
+        <main class="main-wrapper">
+            
+            <!-- BARRA SUPERIOR -->
+            <header class="top-bar">
+                <div class="header-title-container">
+                    <img src="Img/logo-stockflow2.png" alt="Logo" class="title-logo">
+                    <h2>CONFIGURACIÓN</h2>
+                </div>
+                
+                <div class="top-actions">
+                    <i class="fa-regular fa-bell notification-icon"></i>
+                </div>
+            </header>
+            
+            <section class="content-area">
+                <!-- Contenedor general que envuelve las 3 tarjetas de configuración -->
+                <div class="config-wrapper-card">
+                    <div class="config-grid-3">
+                        
+                        <!-- Tarjeta 1: Perfil de la Empresa -->
+                        <div class="config-card-item">
+                            <div class="card-header-badge">Perfil de la Empresa</div>
+                            <div class="config-body">
+                                <label class="config-label">Nombre de la Empresa</label>
+                                <button class="btn-config-dark">Ingresar</button>
+                                <label class="config-label" style="margin-top: 20px;">Logo</label>
+                                <div class="logo-box-mockup">
+                                    <!-- Reemplacé los emojis por un icono de FontAwesome -->
+                                    <i class="fa-regular fa-image logo-icon-placeholder"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Tarjeta 2: Notificaciones -->
+                        <div class="config-card-item">
+                            <div class="card-header-badge">Notificaciones</div>
+                            <div class="config-body">
+                                <div class="toggle-row">
+                                    <span>Alertas de Bajo Stock</span>
+                                    <label class="switch">
+                                        <input type="checkbox" checked>
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                                <div class="toggle-row">
+                                    <span>Resumen diario de movimientos</span>
+                                    <label class="switch">
+                                        <input type="checkbox">
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                                <div class="toggle-row">
+                                    <span>Inicios de Sesión</span>
+                                    <label class="switch">
+                                        <input type="checkbox" checked>
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Tarjeta 3: Seguridad -->
+                        <div class="config-card-item">
+                            <div class="card-header-badge">Seguridad</div>
+                            <div class="config-body">
+                                <button class="btn-config-dark" style="margin-bottom: 25px;">Cambiar contraseña</button>
+                                <a href="#" class="security-link">Verificar dispositivos conectados</a>
+                                <p class="security-text-static">Two-Factor Autentification</p>
+
+                                <!-- 👇 BOTÓN DE CERRAR SESIÓN -->
+                                <button id="btnCerrarSesion" class="btn-logout">
+                                    <i class="fa-solid fa-right-from-bracket"></i> Cerrar Sesión
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    
+    <!-- Script para cerrar sesión -->
+    <script>
+        document.getElementById('btnCerrarSesion').addEventListener('click', function() {
+            // 1. Borramos el nombre del usuario guardado
+            localStorage.removeItem('usuarioLogueado');
+            
+            // 2. Redirigimos al login
+            window.location.href = 'index.html';
+        });
+    </script>
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StockFlow - Dashboard</title>
+    
+    <!-- Importar fuente League Spartan -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Importar librería de iconos FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="layout-container">
+        
+        <!-- SIDEBAR DE NAVEGACIÓN -->
+        <aside class="sidebar">
+            <h2 class="logo">StockFlow</h2>
+            <ul class="menu">
+                <li>
+                    <a href="dashboard.html" class="menu-item">
+                        <i class="fa-solid fa-user"></i> Usuarios
+                    </a>
+                </li>
+                <!-- La clase "active" está en Dashboard porque es la página actual -->
+                <li>
+                    <a href="stock.html" class="menu-item active">
+                        <i class="fa-solid fa-chart-simple"></i> Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a href="inventario.html" class="menu-item">
+                        <i class="fa-solid fa-box"></i> Inventario
+                    </a>
+                </li>
+                <li>
+                    <a href="movimientos.html" class="menu-item">
+                        <i class="fa-solid fa-arrows-rotate"></i> Movimientos
+                    </a>
+                </li>
+                <li>
+                    <a href="configuracion.html" class="menu-item">
+                        <i class="fa-solid fa-gear"></i> Configuración
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- CONTENIDO PRINCIPAL -->
+        <main class="main-wrapper">
+            
+            <!-- BARRA SUPERIOR -->
+            <header class="top-bar">
+                <div class="header-title-container">
+                    <!-- Asegúrate de tener tu logo en 'Img/logo-stockflow2.png' -->
+                    <img src="Img/logo-stockflow2.png" alt="Logo" class="title-logo">
+                    <h2>BIENVENIDO, USUARIO.</h2>
+                </div>
+                
+                <div class="top-actions">
+                    <!-- En el mockup no hay buscador, solo la campana -->
+                    <i class="fa-regular fa-bell notification-icon"></i>
+                </div>
+            </header>
+
+            <!-- ÁREA DE CONTENIDO -->
+            <section class="content-area">
+                
+                <!-- 1. SECCIÓN DE KPIs (TARJETAS) -->
+                <div class="stock-kpi-container">
+                    
+                    <!-- Tarjeta oscura izquierda (Stock Crítico) -->
+                    <div class="kpi-card-dark">
+                        <i class="fa-solid fa-box-open kpi-dark-icon"></i>
+                        <span>Artículos en Stock crítico:</span>
+                        <span class="critical-number">9</span>
+                    </div>
+
+                    <!-- Grid derecho con las 4 tarjetas claras -->
+                    <div class="kpi-grid-right">
+                        <div class="kpi-card-light">
+                            <span>Total de productos:</span>
+                            <strong>120</strong>
+                        </div>
+                        <div class="kpi-card-light">
+                            <span>Productos inexistentes:</span>
+                            <strong>0</strong>
+                        </div>
+                        <div class="kpi-card-light">
+                            <span>Entradas recientes:</span>
+                            <strong>3</strong>
+                        </div>
+                        <div class="kpi-card-light">
+                            <span>Salidas recientes:</span>
+                            <strong>1</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. SECCIÓN DE ALERTA DE STOCK CRÍTICO (TABLA) -->
+                <div class="stock-alert-section">
+                    <h3 class="section-title-stock">
+                        <i class="fa-solid fa-triangle-exclamation warning-icon"></i> Alerta de Stock Crítico
+                    </h3>
+                    
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>SKU</th>
+                                    <th>Nombre del Producto</th>
+                                    <th>Stock Actual</th>
+                                    <th>Stock Mínimo</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><i class="fa-solid fa-triangle-exclamation text-danger"></i> #0001</td>
+                                    <td>Carne</td>
+                                    <td>3</td>
+                                    <td>3</td>
+                                </tr>
+                                <tr>
+                                    <td><i class="fa-solid fa-triangle-exclamation text-danger"></i> #0002</td>
+                                    <td>Arroz</td>
+                                    <td>5</td>
+                                    <td>6</td>
+                                </tr>
+                                <tr>
+                                    <td><i class="fa-solid fa-triangle-exclamation text-danger"></i> #0003</td>
+                                    <td>Lenteja</td>
+                                    <td>3</td>
+                                    <td>8</td>
+                                </tr>
+                                <tr>
+                                    <td><i class="fa-solid fa-triangle-exclamation text-danger"></i> #0004</td>
+                                    <td>Frijol</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td><i class="fa-solid fa-triangle-exclamation text-danger"></i> #0005</td>
+                                    <td>Harina</td>
+                                    <td>2</td>
+                                    <td>5</td>
+                                </tr>
+                                <tr>
+                                    <td><i class="fa-solid fa-triangle-exclamation text-danger"></i> #0006</td>
+                                    <td>Leche</td>
+                                    <td>4</td>
+                                    <td>10</td>
+                                </tr>
+                                <tr>
+                                    <td><i class="fa-solid fa-triangle-exclamation text-danger"></i> #0007</td>
+                                    <td>Azúcar</td>
+                                    <td>1</td>
+                                    <td>5</td>
+                                </tr>
+                                <tr>
+                                    <td>#0008</td>
+                                    <td>Avena</td>
+                                    <td>11</td>
+                                    <td>7</td>
+                                </tr>
+                                <tr>
+                                    <td>#0009</td>
+                                    <td>Mantequilla</td>
+                                    <td>8</td>
+                                    <td>6</td>
+                                </tr>
+                                <tr>
+                                    <td>#0010</td>
+                                    <td>Huevos</td>
+                                    <td>24</td>
+                                    <td>15</td>
+                                </tr>
+                                <tr>
+                                    <td>#0011</td>
+                                    <td>Papel</td>
+                                    <td>30</td>
+                                    <td>20</td>
+                                </tr>
+                                <tr>
+                                    <td>#0012</td>
+                                    <td>Jabón</td>
+                                    <td>9</td>
+                                    <td>5</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+            </section>
+        </main>
+    </div>
+    
+    <script src="js/main.js"></script>
+</body>
+</html>

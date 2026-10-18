@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StockFlow - Inventario</title>
+    
+    <!-- Importar fuente League Spartan -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Importar librería de iconos FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="layout-container">
+        
+        <!-- SIDEBAR DE NAVEGACIÓN -->
+        <aside class="sidebar">
+            <h2 class="logo">StockFlow</h2>
+            <ul class="menu">
+                <li>
+                    <a href="dashboard.html" class="menu-item">
+                        <i class="fa-solid fa-user"></i> Usuarios
+                    </a>
+                </li>
+                <li>
+                    <a href="stock.html" class="menu-item">
+                        <i class="fa-solid fa-chart-simple"></i> Dashboard
+                    </a>
+                </li>
+                <!-- La clase "active" está en Inventario porque es la página actual -->
+                <li>
+                    <a href="inventario.html" class="menu-item active">
+                        <i class="fa-solid fa-box"></i> Inventario
+                    </a>
+                </li>
+                <li>
+                    <a href="movimientos.html" class="menu-item">
+                        <i class="fa-solid fa-arrows-rotate"></i> Movimientos
+                    </a>
+                </li>
+                <li>
+                    <a href="configuracion.html" class="menu-item">
+                        <i class="fa-solid fa-gear"></i> Configuración
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- CONTENIDO PRINCIPAL -->
+        <main class="main-wrapper">
+            
+            <!-- BARRA SUPERIOR -->
+            <header class="top-bar">
+                <div class="header-title-container">
+                    <!-- Logo al lado del título -->
+                    <img src="Img/logo-stockflow2.png" alt="Logo" class="title-logo">
+                    <h2>GESTIÓN DE INVENTARIO</h2>
+                </div>
+                
+                <div class="top-actions">
+                    <input type="text" placeholder="Buscar" class="search-input">
+                    <i class="fa-regular fa-bell notification-icon"></i>
+                </div>
+            </header>
+
+            <!-- ÁREA DE CONTENIDO -->
+            <section class="content-area">
+                
+                <!-- BOTONES DE ACCIÓN -->
+                <div class="action-buttons-group">
+                    <button class="btn-action btn-ingresar">
+                        <i class="fa-solid fa-plus"></i> Ingresar Producto
+                    </button>
+                    <button class="btn-action btn-sacar">
+                        <i class="fa-solid fa-minus"></i> Sacar Producto
+                    </button>
+                </div>
+
+                <!-- TABLA DE INVENTARIO -->
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>SKU</th>
+                                <th>Nombre del producto</th>
+                                <th>Stock Actual</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>#0001</td>
+                                <td>Carne</td>
+                                <td>3</td>
+                                <td class="actions-cell">
+                                    <i class="fa-solid fa-minus action-icon"></i>
+                                    <i class="fa-solid fa-eye action-icon"></i>
+                                    <i class="fa-solid fa-pencil action-icon"></i>
+                                    <i class="fa-solid fa-plus action-icon"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>#0002</td>
+                                <td>Arroz</td>
+                                <td>5</td>
+                                <td class="actions-cell">
+                                    <i class="fa-solid fa-minus action-icon"></i>
+                                    <i class="fa-solid fa-eye action-icon"></i>
+                                    <i class="fa-solid fa-pencil action-icon"></i>
+                                    <i class="fa-solid fa-plus action-icon"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>#0003</td>
+                                <td>Lenteja</td>
+                                <td>3</td>
+                                <td class="actions-cell">
+                                    <i class="fa-solid fa-minus action-icon"></i>
+                                    <i class="fa-solid fa-eye action-icon"></i>
+                                    <i class="fa-solid fa-pencil action-icon"></i>
+                                    <i class="fa-solid fa-plus action-icon"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>#0004</td>
+                                <td>Frijol</td>
+                                <td>1</td>
+                                <td class="actions-cell">
+                                    <i class="fa-solid fa-minus action-icon"></i>
+                                    <i class="fa-solid fa-eye action-icon"></i>
+                                    <i class="fa-solid fa-pencil action-icon"></i>
+                                    <i class="fa-solid fa-plus action-icon"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>#0005</td>
+                                <td>Harina</td>
+                                <td>2</td>
+                                <td class="actions-cell">
+                                    <i class="fa-solid fa-minus action-icon"></i>
+                                    <i class="fa-solid fa-eye action-icon"></i>
+                                    <i class="fa-solid fa-pencil action-icon"></i>
+                                    <i class="fa-solid fa-plus action-icon"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>#0006</td>
+                                <td>Leche</td>
+                                <td>4</td>
+                                <td class="actions-cell">
+                                    <i class="fa-solid fa-minus action-icon"></i>
+                                    <i class="fa-solid fa-eye action-icon"></i>
+                                    <i class="fa-solid fa-pencil action-icon"></i>
+                                    <i class="fa-solid fa-plus action-icon"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>#0007</td>
+                                <td>Azúcar</td>
+                                <td>1</td>
+                                <td class="actions-cell">
+                                    <i class="fa-solid fa-minus action-icon"></i>
+                                    <i class="fa-solid fa-eye action-icon"></i>
+                                    <i class="fa-solid fa-pencil action-icon"></i>
+                                    <i class="fa-solid fa-plus action-icon"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>#0008</td>
+                                <td>Avena</td>
+                                <td>11</td>
+                                <td class="actions-cell">
+                                    <i class="fa-solid fa-minus action-icon"></i>
+                                    <i class="fa-solid fa-eye action-icon"></i>
+                                    <i class="fa-solid fa-pencil action-icon"></i>
+                                    <i class="fa-solid fa-plus action-icon"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>#0009</td>
+                                <td>Mantequilla</td>
+                                <td>8</td>
+                                <td class="actions-cell">
+                                    <i class="fa-solid fa-minus action-icon"></i>
+                                    <i class="fa-solid fa-eye action-icon"></i>
+                                    <i class="fa-solid fa-pencil action-icon"></i>
+                                    <i class="fa-solid fa-plus action-icon"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>#0010</td>
+                                <td>Huevos</td>
+                                <td>24</td>
+                                <td class="actions-cell">
+                                    <i class="fa-solid fa-minus action-icon"></i>
+                                    <i class="fa-solid fa-eye action-icon"></i>
+                                    <i class="fa-solid fa-pencil action-icon"></i>
+                                    <i class="fa-solid fa-plus action-icon"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>#0011</td>
+                                <td>Papel</td>
+                                <td>30</td>
+                                <td class="actions-cell">
+                                    <i class="fa-solid fa-minus action-icon"></i>
+                                    <i class="fa-solid fa-eye action-icon"></i>
+                                    <i class="fa-solid fa-pencil action-icon"></i>
+                                    <i class="fa-solid fa-plus action-icon"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>#0012</td>
+                                <td>Jabón</td>
+                                <td>9</td>
+                                <td class="actions-cell">
+                                    <i class="fa-solid fa-minus action-icon"></i>
+                                    <i class="fa-solid fa-eye action-icon"></i>
+                                    <i class="fa-solid fa-pencil action-icon"></i>
+                                    <i class="fa-solid fa-plus action-icon"></i>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+</html>

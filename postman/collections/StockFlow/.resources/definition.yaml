@@ -1,0 +1,4 @@
+$kind: collection
+description: ""
+variables:
+  url_base: http://localhost:3000

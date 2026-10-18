@@ -1,0 +1,190 @@
+{
+	"info": {
+		"_postman_id": "stockflow-collection-complete-id",
+		"name": "StockFlow",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"variable": [
+		{
+			"key": "url_base",
+			"value": "http://localhost:3000"
+		}
+	],
+	"item": [
+		{
+			"name": "Usuarios",
+			"item": [
+				{
+					"name": "Listar Usuarios (GET - 200)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url_base}}/usuarios",
+							"host": [
+								"{{url_base}}"
+							],
+							"path": [
+								"usuarios"
+							]
+						}
+					}
+				},
+				{
+					"name": "Registrar Nuevo Usuario (POST - 201)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": \"U099\",\n  \"nombre\": \"Carlos Test\",\n  \"password\": \"123456\",\n  \"rol\": \"Vendedor\",\n  \"estado\": \"Activo\"\n}"
+						},
+						"url": {
+							"raw": "{{url_base}}/usuarios",
+							"host": [
+								"{{url_base}}"
+							],
+							"path": [
+								"usuarios"
+							]
+						}
+					}
+				},
+				{
+					"name": "Consultar Usuario Inexistente (GET - 404)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url_base}}/usuarios/U99999",
+							"host": [
+								"{{url_base}}"
+							],
+							"path": [
+								"usuarios",
+								"U99999"
+							]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Inventario",
+			"item": [
+				{
+					"name": "Obtener Todo el Inventario (GET - 200)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url_base}}/inventario",
+							"host": [
+								"{{url_base}}"
+							],
+							"path": [
+								"inventario"
+							]
+						}
+					}
+				},
+				{
+					"name": "Registrar Nuevo Producto (POST - 201)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": \"0015\",\n  \"nombre\": \"Queso\",\n  \"stock\": 12\n}"
+						},
+						"url": {
+							"raw": "{{url_base}}/inventario",
+							"host": [
+								"{{url_base}}"
+							],
+							"path": [
+								"inventario"
+							]
+						}
+					}
+				},
+				{
+					"name": "Consultar Producto Inexistente (GET - 404)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url_base}}/inventario/999999",
+							"host": [
+								"{{url_base}}"
+							],
+							"path": [
+								"inventario",
+								"999999"
+							]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Stock",
+			"item": [
+				{
+					"name": "Obtener Stock (GET - 200)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url_base}}/inventario",
+							"host": [
+								"{{url_base}}"
+							],
+							"path": [
+								"inventario"
+							]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Movimientos",
+			"item": [
+				{
+					"name": "Ver Movimientos (GET - 200)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url_base}}/movimientos",
+							"host": [
+								"{{url_base}}"
+							],
+							"path": [
+								"movimientos"
+							]
+						}
+					}
+				}
+			]
+		}
+	]
+}
+```[cite: 15]
+
+### ¿Qué incluye esta versión mejorada?
+1. **Variable global de entorno (`url_base`):** Configurada automáticamente en `http://localhost:3000` para que todas las peticiones apunten de forma dinámica a tu servidor local[cite: 15].
+2. **Carpeta Usuarios:** Contiene la consulta general de usuarios (`GET` - 200), el registro de prueba con credenciales de acceso (`POST` - 201) y la simulación de un usuario que no existe para capturar el código **404**.
+3. **Carpeta Inventario:** Contiene la lista general, el registro de un producto nuevo y la consulta errónea con ID inválido.
+4. **Carpetas Stock y Movimientos:** Estructuradas con sus respectivas consultas válidas para completar la totalidad de los módulos requeridos por el sistema StockFlow.

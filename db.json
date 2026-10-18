@@ -1,0 +1,105 @@
+{
+  "inventario": [
+    {
+      "id": "0001",
+      "nombre": "Carne",
+      "stock": 3
+    },
+    {
+      "id": "0002",
+      "nombre": "Arroz",
+      "stock": 5
+    },
+    {
+      "id": "0003",
+      "nombre": "Lenteja",
+      "stock": 3
+    },
+    {
+      "id": "0004",
+      "nombre": "Frijol",
+      "stock": 1
+    },
+    {
+      "id": "0005",
+      "nombre": "Harina",
+      "stock": 2
+    },
+    {
+      "id": "0006",
+      "nombre": "Leche",
+      "stock": 4
+    },
+    {
+      "id": "0007",
+      "nombre": "Azúcar",
+      "stock": 1
+    },
+    {
+      "id": "wdZ2wDQNKd0",
+      "nombre": "Queso",
+      "stock": 12
+    },
+    {
+      "id": "f3UU12r0DWg",
+      "nombre": "Queso",
+      "stock": 12
+    },
+    {
+      "id": "90hLbGrrpkA",
+      "nombre": "Queso",
+      "stock": 12
+    }
+  ],
+  "usuarios": [
+    {
+      "id": "U001",
+      "nombre": "Juan H",
+      "rol": "Administrador",
+      "estado": "Activo"
+    },
+    {
+      "id": "U002",
+      "nombre": "Santiago A",
+      "rol": "Vendedor",
+      "estado": "Inactivo"
+    },
+    {
+      "id": "U003",
+      "nombre": "Camila S",
+      "rol": "Vendedor",
+      "estado": "Activo"
+    },
+    {
+      "id": "VJNDUQa4JPs",
+      "nombre": "s",
+      "rol": "Vendedor",
+      "estado": "Activo"
+    },
+    {
+      "id": "rZ3bZCG4gIk",
+      "nombre": "s",
+      "password": "s",
+      "rol": "Vendedor",
+      "estado": "Activo"
+    },
+    {
+      "id": "GfEGG_O1npc",
+      "nombre": "x",
+      "password": "x",
+      "rol": "Vendedor",
+      "estado": "Activo"
+    }
+  ],
+  "movimientos": [
+    {
+      "id": "1",
+      "fecha": "2026-07-11 10:45",
+      "tipo": "Salida",
+      "producto": "Arroz",
+      "sku": "#0002",
+      "cantidad": 2
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

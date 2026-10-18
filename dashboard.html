@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StockFlow - Gestión de Usuarios</title>
+    
+    <!-- Importar fuente League Spartan -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Importar librería de iconos FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="layout-container">
+        
+        <!-- SIDEBAR DE NAVEGACIÓN -->
+        <aside class="sidebar">
+            <h2 class="logo">StockFlow</h2>
+            <ul class="menu">
+                <!-- La clase "active" marca la pestaña actual (Usuarios) -->
+                <li>
+                    <a href="dashboard.html" class="menu-item active">
+                        <i class="fa-solid fa-user"></i> Usuarios
+                    </a>
+                </li>
+                <li>
+                    <!-- Apunta a stock.html según tu estructura de archivos -->
+                    <a href="stock.html" class="menu-item">
+                        <i class="fa-solid fa-chart-simple"></i> Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a href="inventario.html" class="menu-item">
+                        <i class="fa-solid fa-box"></i> Inventario
+                    </a>
+                </li>
+                <li>
+                    <a href="movimientos.html" class="menu-item">
+                        <i class="fa-solid fa-arrows-rotate"></i> Movimientos
+                    </a>
+                </li>
+                <li>
+                    <a href="configuracion.html" class="menu-item">
+                        <i class="fa-solid fa-gear"></i> Configuración
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- CONTENIDO PRINCIPAL -->
+        <main class="main-wrapper">
+            
+            <!-- BARRA SUPERIOR (TÍTULO Y BUSCADOR) -->
+            <header class="top-bar">
+                <!-- Contenedor para alinear el logo con el título -->
+                <div class="header-title-container">
+                    <!-- Ruta corregida a tu carpeta Img -->
+                    <img src="Img/logo-stockflow2.png" alt="Logo" class="title-logo">
+                    <h2>GESTIÓN DE USUARIOS</h2>
+                </div>
+                
+                <div class="top-actions">
+                    <input type="text" placeholder="Buscar" class="search-input">
+                    <i class="fa-regular fa-bell notification-icon"></i>
+                </div>
+            </header>
+
+            <!-- ÁREA DE CONTENIDO (TABLA) -->
+            <section class="content-area">
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nombre de Usuario</th>
+                                <th>Rol</th>
+                                <th>Estado</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>U001</td>
+                                <td>Juan H</td>
+                                <td><span class="badge-role">Administrador</span></td>
+                                <td>Activo <span class="status-dot green"></span></td>
+                                <td class="actions-cell">
+                                    <i class="fa-solid fa-eye action-icon"></i>
+                                    <i class="fa-solid fa-pencil action-icon"></i>
+                                    <i class="fa-solid fa-arrows-rotate action-icon"></i>
+                                    <i class="fa-solid fa-triangle-exclamation action-icon"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>U002</td>
+                                <td>Santiago A</td>
+                                <td>Vendedor</td>
+                                <td>Inactivo <span class="status-dot blue"></span></td>
+                                <td class="actions-cell">
+                                    <i class="fa-solid fa-eye action-icon"></i>
+                                    <i class="fa-solid fa-pencil action-icon"></i>
+                                    <i class="fa-solid fa-arrows-rotate action-icon"></i>
+                                    <i class="fa-solid fa-triangle-exclamation action-icon"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>U003</td>
+                                <td>Camila S</td>
+                                <td>Vendedor</td>
+                                <td>Activo <span class="status-dot green"></span></td>
+                                <td class="actions-cell">
+                                    <i class="fa-solid fa-eye action-icon"></i>
+                                    <i class="fa-solid fa-pencil action-icon"></i>
+                                    <i class="fa-solid fa-arrows-rotate action-icon"></i>
+                                    <i class="fa-solid fa-triangle-exclamation action-icon"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>U004</td>
+                                <td>Martin B</td>
+                                <td><span class="badge-role">Inventarista</span></td>
+                                <td>Activo <span class="status-dot green"></span></td>
+                                <td class="actions-cell">
+                                    <i class="fa-solid fa-eye action-icon"></i>
+                                    <i class="fa-solid fa-pencil action-icon"></i>
+                                    <i class="fa-solid fa-arrows-rotate action-icon"></i>
+                                    <i class="fa-solid fa-triangle-exclamation action-icon"></i>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+    
+    <script src="js/main.js"></script>
+</body>
+</html>

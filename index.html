@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StockFlow - Iniciar Sesión</title>
+    <!-- FontAwesome para los íconos de usuario y cerrojo dentro de los inputs -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="login-body">
+
+    <div class="login-wrapper">
+        <!-- Tarjeta Azul Oscura -->
+        <div class="login-card">
+            <!-- Logo + Nombre alineados en la esquina izquierda superior -->
+            <div class="login-header">
+                <img src="Img/logo-stockflow.png" alt="StockFlow Logo" class="login-logo-img">
+                <span class="brand-name">StockFlow</span>
+            </div>
+
+            <!-- Formulario con ID para interceptar el envío con JavaScript -->
+            <form class="login-form" id="loginForm">
+                <!-- Input Usuario -->
+                <div class="input-group">
+                    <i class="fa-solid fa-user input-icon"></i>
+                    <input type="text" id="loginUsuario" placeholder="Nombre De Usuario" class="form-control" required>
+                </div>
+
+                <!-- Input Contraseña -->
+                <div class="input-group">
+                    <i class="fa-solid fa-lock input-icon"></i>
+                    <input type="password" id="loginPassword" placeholder="Contraseña" class="form-control" required>
+                </div>
+                
+                <!-- Mensaje de error dinámico (oculto por defecto) -->
+                <div id="errorMensaje" style="color: #ff6b6b; font-size: 14px; font-weight: 700; text-align: center; display: none; margin-bottom: 5px;">
+                    Usuario no registrado o incorrecto.
+                </div>
+
+                <!-- Olvidaste contraseña -->
+                <div class="forgot-container">
+                    <a href="#" class="forgot-password">Olvidaste tu contraseña?</a>
+                </div>
+
+                <!-- Botón Iniciar Sesión -->
+                <button type="submit" class="btn-primary">INICIAR SESIÓN</button>
+            </form>
+        </div>
+
+        <!-- Enlace de Registro AFUERA de la tarjeta -->
+        <p class="register-redirect">
+            ¿No tienes una cuenta? <a href="register.html">Regístrate.</a>
+        </p>
+    </div>
+
+    <!-- Script de conexión con la API -->
+    <script src="jsmain.js"></script>
+</body>
+</html>

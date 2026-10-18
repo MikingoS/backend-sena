@@ -1,0 +1,974 @@
+/* ==========================================================================
+   1. IMPORTACIÓN DE FUENTES Y VARIABLES EXACTAS
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --bg-general: #f5f6fa;       /* Fondo general */
+    --card-dark: #2d3f50;        /* Tarjeta central y texto del botón */
+    --accent-box: #bbdbf2;       /* Inputs, sidebar y enlaces */
+    
+    /* Fuente unificada League Spartan para todo el sistema */
+    --font-main: 'League Spartan',  'sans-serif';
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--bg-general);
+    color: var(--card-dark);
+}
+/* ==========================================================================
+   3. DASHBOARD Y COMPONENTES
+   ========================================================================== */
+.layout-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Contenedor que alinea el logo y el título en fila */
+.header-title-container {
+    display: flex;          /* ¡ESTO ES LO QUE LOS PONE AL LADO! */
+    align-items: center;    /* Los centra verticalmente */
+    gap: 0px;              /* Separación entre el logo y el texto */
+}
+
+/* Tamaño del logo */
+.title-logo {
+    height: 70px;           /* Ajusta la altura a tu gusto */
+    width: auto;            /* Mantiene la proporción */
+    object-fit: contain;
+}
+
+.main-wrapper .top-bar h2 {
+    margin: 0;
+    margin-top: 20px;              /* 👈 Ajusta esto si necesitas subir/bajar el título */
+    font-size: 6rem !important;    /* 👈 AUMENTADO: antes 2.1rem */
+    font-weight: 800;
+    color: var(--card-dark);
+    font-family: 'League Spartan', sans-serif;
+}
+/* Barra lateral más grande y centrada */
+.sidebar {
+    width: 270px; /* Ancho ligeramente mayor para dar espacio */
+    background-color: var(--accent-box);
+    color: var(--card-dark);
+    padding: 35px 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra los elementos horizontalmente */
+}
+.sidebar ul {
+    list-style: none;
+    width: 100%; /* Ocupa el ancho para alinear los enlaces */
+}
+
+.sidebar li {
+    margin-bottom: 18px;
+}
+
+.sidebar a {
+    display: flex;          /* 👈 Cambiamos a flex para alinear icono y texto */
+    align-items: center;    /* 👈 Alinea verticalmente */
+    gap: 20px;              /* 👈 Separación entre icono y texto */
+    padding: 15px 25px;
+    color: var(--card-dark);      
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.5rem;      /* 👈 AUMENTADO: Antes 1.1rem */
+    border-radius: 19px;
+    font-family: 'League Spartan', sans-serif; /* 👈 Corregido: faltaban comillas */
+    margin-bottom: 10px;     /* Un poco de aire entre botones */
+    transition: all 0.2s ease;
+}
+.sidebar a i {
+    font-size: 1.4rem;      /* 👈 Iconos más grandes para acompañar */
+    width: 10px;
+    text-align: center;
+}
+
+.sidebar .logo {
+    font-family: 'League Spartan', sans-serif !important; /* 👈 Corregido */
+    margin-bottom: 40px;
+    font-size: 3rem;
+    color: var(--card-dark);
+    font-weight: 800;
+    letter-spacing: 1px;
+    padding: 0 2px;
+    width: 100%;
+}
+.main-wrapper {
+    flex: 100;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-general);
+}
+
+.top-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Separación entre el buscador y la campana */
+}
+
+.notification-icon {
+    font-size: 1.8rem;       /* 👈 Tamaño de la campana */
+    color: var(--card-dark);
+    cursor: pointer;
+    display: inline-block;   /* Asegura que no se rompa el layout */
+    transition: transform 0.2s ease;
+}
+
+.top-bar {
+    background-color: var(--bg-general);
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--accent-box);
+}
+
+.top-bar h2 {
+    font-family: var(--font-main);
+    font-size: 20rem;
+}
+
+.content-area {
+    padding: 30px;
+}
+
+.kpi-card.critical {
+    background-color: var(--card-dark);
+    color: var(--bg-general);
+}
+
+.table-responsive {
+    background-color: #f5f6fa;
+    border-radius: 14px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    font-family: var(--font-main);
+}
+
+th, td {
+    padding: 14px 15px;
+    border-bottom: 1px solid #E2E8F0;
+    font-size: 1.05rem;
+}
+
+.badge-role {
+    background-color: var(--accent-box);
+    color: var(--card-dark);
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-weight: 700;
+}
+
+.sidebar a.active, .sidebar a:hover {
+    background-color: var(--card-dark);
+    color: var(--bg-general);
+}
+
+/* Barra de búsqueda superior más grande */
+.search-input {
+    background-color: var(--accent-box);
+    border: none;
+    border-radius: 250px;
+    padding: 12px 22px; /* Más espacio interno */
+    font-family: var(--font-main);
+    color: var(--card-dark);
+    outline: none;
+    font-size: 1.1rem;   /* Letra más grande dentro del buscador */
+    width: 280px;        /* Buscador más ancho */
+    font-weight: 600;
+}
+
+.search-input::placeholder {
+    color: var(--card-dark);
+    opacity: 0.85;
+    font-size: 1.1rem;
+}
+
+/* ==========================================================================
+   AJUSTE DE TAMAÑOS DE LETRA PARA TABLAS Y TÍTULOS (INVENTARIO Y USUARIOS)
+   ========================================================================== */
+
+/* Agrandar un poquito más las letras de las tablas en Inventario y Dashboard */
+table th {
+    font-size: 1.25rem !important; /* Títulos de columnas más grandes */
+}
+
+table td {
+    font-size: 1.15rem !important; /* Datos de celdas más grandes y legibles */
+}
+
+/* Encabezados principales de las vistas (Gestión de Inventario, Usuarios) */
+.main-wrapper .top-bar h2 {
+    font-size: 2.1rem !important;
+}
+
+/* ==========================================================================
+   ESTILOS EXACTOS LOGIN (CALCADO A REFERENCIA)
+   ========================================================================== */
+
+body.login-body {
+    margin: 0 !important;
+    padding: 0 !important;
+    min-height: 100vh !important;
+    background-color: #2d3f50 !important;
+    background-image: url('../Img/bg-register..jpg') !important;
+    background-size: auto !important;
+    background-repeat: repeat !important;
+    background-position: center !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    font-family: 'League Spartan', 'Segoe UI', sans-serif !important;
+}
+
+/* Envoltorio principal */
+.login-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 25px; /* Mayor separación hacia el texto de registro */
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+}
+
+/* Tarjeta azul oscura con borde redondeado y sombra doble */
+.login-card {
+    background-color: #2b3b4c;
+    width: 100%;
+    padding: 55px 35px 55px 35px;
+    border-radius: 35px;
+    box-shadow: 14px 14px 0px rgba(0, 0, 0, 0.15); /* Sombra solida inferior derecha como en la imagen */
+    box-sizing: border-box;
+}
+
+/* Encabezado: Logo + Texto "StockFlow" */
+.login-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 75px;
+    margin-bottom: 35px;
+}
+
+.login-logo-img {
+    height: 70px;
+    width: auto;
+    object-fit: contain;
+    filter: none !important; /* Fuerza a que no tenga ningún filtro */
+    transition: none !important;
+}
+
+.brand-name {
+    color: #f8fafc;
+    font-size: 60px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+/* Formulario e Inputs Gorditos */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px; /* Inputs más pegados */
+}
+
+.input-group {
+    position: relative;
+    width: 100%;
+}
+
+.input-icon {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #f8fafc;
+    font-size: 20px;
+    z-index: 2;
+}
+
+.form-control {
+    width: 100%;
+    height: 58px;
+    background-color: #b9d8ee;
+    border: none;
+    border-radius: 29px;
+    padding-left: 58px;
+    padding-right: 20px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #f5f6fa;
+    outline: none;
+}
+
+.form-control::placeholder {
+    color: #f8fafc; /* Color azul claro para las letras del placeholder */
+    font-weight: 600;
+    opacity: 0.9;
+}
+
+/* Enlace de olvido de contraseña */
+.forgot-container {
+    text-align: right;
+    margin-top: -8px;
+    margin-bottom: 6px;
+}
+
+.forgot-password {
+    color: #b9d8ee;
+    font-size: 13px;
+    text-decoration: none;
+    opacity: 0.9;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+/* Botón Iniciar Sesión */
+.btn-primary {
+    width: 65%;
+    height: 50px;
+    margin: 0 auto;
+    background-color: #f8fafc;
+    color: #1e293b;
+    border: none;
+    border-radius: 25px;
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.1s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    background-color: #f8fafc;
+}
+
+/* Enlace "Regístrate" fuera del cuadro */
+.register-redirect {
+    color: #334155;
+    font-size: 19px;
+    font-weight: 500;
+    margin: 0;
+    text-align: center;
+}
+
+.register-redirect a {
+    color: #334155;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.register-redirect a:hover {
+    text-decoration: underline;
+}
+/* ==========================================================================
+   ESTILOS PANTALLA DE REGISTRO - STOCKFLOW
+   ========================================================================== */
+
+/* Cuerpo con textura de fondo bg-register.jpg y centrado */
+body.register-body {
+    width: 100vw !important;
+    min-height: 100vh !important;
+    background-color: #2d3f50 !important;
+    background-image: url('../Img/bg-login.jpg') !important;
+    background-size: auto !important;
+    background-repeat: repeat !important;
+    background-position: center !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin: 0 !important;
+}
+
+/* Contenedor principal centrado */
+.register-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 480px;
+    padding: 20px;
+}
+
+/* Tarjeta Blanca Redondeada */
+.register-card {
+    background-color: #f4f6f8;
+    width: 100%;
+    padding: 40px 20px 40px 20px;
+    border-radius: 40px;
+    box-shadow: 14px 14px 0px rgba(0, 0, 0, 0.15);
+}
+
+/* Encabezado con el Logo */
+.register-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 75px;
+    margin-bottom: 35px;
+}
+
+.register-logo-img {
+    height: 98px;
+    width: auto;
+    object-fit: contain;
+    filter: none !important; /* Fuerza a que no tenga ningún filtro */
+    transition: none !important;
+    /* Filtro para adaptar el color del logo si es necesario sobre fondo blanco, o dejarlo original */
+}
+
+/* Formulario e Inputs */
+.register-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center !important;
+    justify-content: center;
+    gap: 18px;
+    width: 100%;
+}
+
+.input-group {
+    position: relative;
+    width: 85%;
+    margin: 0 auto;
+    justify-content: center;
+    max-width: 380px;
+}
+
+.input-icon-reg {
+    position: absolute;
+    left: 45px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #f8fafc; /* Íconos blancos dentro de los inputs azules */
+    font-size: 20px;
+    z-index: 10;
+}
+
+.form-control-reg {
+    width: 85%;
+    height: 60px;
+    background-color: #b9d8ee; /* Azul clarito de los inputs */
+    border: none;
+    border-radius: 35px;
+    padding-left: 58px;
+    padding-right: 40px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #f8fafc; /* Texto escrito en blanco */
+    outline: none;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Placeholder en color blanco */
+.form-control-reg::placeholder {
+    color: #f8fafc !important;
+    font-weight: 600;
+    opacity: 0.95;
+}
+
+/* Botón Registrar Oscuro */
+.btn-register {
+    width: 60%;
+    height: 65px;
+    margin: 10px auto 0 auto;
+    background-color: #2b3b4c; /* Azul oscuro corporativo */
+    color: #f8fafc;
+    border: none;
+    border-radius: 34px;
+    font-size: 30px;
+    font-weight: 750;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.1s ease, background-color 0.2s ease;
+    display: block;
+}
+
+.btn-register:hover {
+    transform: translateY(-2px);
+    background-color: #1e293b;
+}
+
+
+
+
+
+/* Estilos para el icono de advertencia rojo */
+.text-danger {
+    color: #ff6b6b;
+    margin-right: 5px;
+}
+
+/* Estilos para el contenedor de KPIs */
+.stock-kpi-container {
+    display: flex;
+    gap: 25px;
+    margin-bottom: 30px;
+    background-color: #ffffff;
+    border: 3px solid var(--accent-box);
+    border-radius: 26px;
+    padding: 25px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+}
+
+/* Tarjeta oscura izquierda */
+.kpi-card-dark {
+    background-color: var(--card-dark);
+    color: var(--bg-general);
+    border-radius: 20px;
+    padding: 25px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: var(--font-main);
+    font-weight: 700;
+    font-size: 1.35rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.kpi-dark-icon {
+    font-size: 2.8rem;
+    margin-bottom: 12px;
+}
+
+.critical-number {
+    display: block;
+    font-size: 3rem;
+    font-weight: 800;
+    color: #ff6b6b;
+    margin-top: 5px;
+}
+
+/* Grid derecho para las 4 tarjetitas */
+.kpi-grid-right {
+    flex: 2;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.kpi-card-light {
+    background-color: #ffffff;
+    border: 2px solid var(--accent-box);
+    border-radius: 16px;
+    padding: 20px;
+    font-family: var(--font-main);
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: var(--card-dark);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.kpi-card-light strong {
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+
+/* Sección de la tabla de alerta */
+.stock-alert-section {
+    background-color: #ffffff;
+    border: 3px solid var(--accent-box);
+    border-radius: 26px;
+    padding: 25px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+}
+
+.section-title-stock {
+    font-family: var(--font-main);
+    font-weight: 800;
+    font-size: 1.6rem;
+    color: var(--card-dark);
+    margin-bottom: 20px;
+}
+
+.warning-icon {
+    margin-right: 6px;
+    color: #ff6b6b; /* Color rojo para el icono de advertencia */
+}
+
+/* Ajuste responsive para pantallas pequeñas */
+@media (max-width: 1024px) {
+    .stock-kpi-container {
+        flex-direction: column;
+    }
+    .kpi-grid-right {
+        grid-template-columns: 1fr;
+    }
+}
+/* Centrar la columna SKU (primera columna de la tabla de alertas) */
+.stock-alert-section table th:first-child,
+.stock-alert-section table td:first-child {
+    text-align: center;
+    padding-left: 0;  /* Opcional: para que el centrado sea perfecto */
+    padding-right: 0; /* Opcional */
+}
+/* ==========================================================================
+   BOTONES DE ACCIÓN (INGRESAR / SACAR PRODUCTO)
+   ========================================================================== */
+.action-buttons-group {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.btn-action {
+    display: flex;
+    align-items: center;
+    gap: 10px;               /* Separación entre el icono y el texto */
+    padding: 14px 28px;      /* Tamaño del botón */
+    border-radius: 30px;     /* Bordes bien redondeados (forma de píldora) */
+    border: none;
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.btn-action:hover {
+    transform: translateY(-2px);
+    opacity: 0.92;
+}
+
+/* Botón "Ingresar Producto" (Azul oscuro) */
+.btn-ingresar {
+    background-color: var(--card-dark);
+    color: var(--bg-general);
+}
+
+/* Botón "Sacar Producto" (Rojo coral) */
+.btn-sacar {
+    background-color: #ff6b6b;
+    color: var(--bg-general);
+}
+/* Botón de Cerrar Sesión */
+.btn-logout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: transparent; /* Fondo transparente */
+    color: #ff6b6b;                /* Color rojo coral */
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    padding: 12px 24px;
+    border: 2px solid #ff6b6b;     /* Borde rojo */
+    border-radius: 30px;
+    cursor: pointer;
+    margin-top: 30px;              /* Separación del texto de arriba */
+    width: 100%;
+    max-width: 260px;
+    transition: all 0.2s ease;
+}
+
+.btn-logout:hover {
+    background-color: #ff6b6b;     /* Al pasar el mouse, se rellena de rojo */
+    color: white;
+    transform: translateY(-2px);
+}
+/* ==========================================================================
+   PÁGINA DE CONFIGURACIÓN - TARJETAS Y ESTILOS
+   ========================================================================== */
+
+/* Contenedor general que envuelve las 3 tarjetas */
+.config-wrapper-card {
+    background-color: #e8f4fb !important; /* Fondo celeste claro como en el mockup */
+    border: 4px solid var(--accent-box) !important;
+    border-radius: 30px !important;
+    padding: 30px !important;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.05) !important;
+}
+
+/* Grid de 3 columnas para las tarjetas */
+.config-grid-3 {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 30px !important;
+}
+
+/* Cada tarjeta individual (blanca) */
+.config-card-item {
+    background-color: #ffffff !important;
+    border: 2px solid var(--accent-box) !important;
+    border-radius: 22px !important;
+    padding: 25px 22px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    min-height: 420px !important;
+    align-items: center !important;
+    text-align: center !important;
+}
+
+/* Encabezado celeste de cada tarjeta (Perfil, Notificaciones, Seguridad) */
+.card-header-badge {
+    background-color: var(--accent-box) !important;
+    color: var(--card-dark) !important;
+    font-family: 'League Spartan', sans-serif !important;
+    font-weight: 700 !important;
+    font-size: 1.5rem !important;
+    padding: 12px 20px !important;
+    border-radius: 14px !important;
+    margin-bottom: 25px !important;
+    width: 100% !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+}
+
+/* Cuerpo interno de cada tarjeta */
+.config-body {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 18px !important;
+    width: 100% !important;
+    align-items: center !important;
+}
+
+/* Etiquetas de texto dentro de las tarjetas */
+.config-label {
+    font-family: 'League Spartan', sans-serif !important;
+    font-weight: 600 !important;
+    color: var(--card-dark) !important;
+    font-size: 1.4rem !important;
+    text-align: center !important;
+}
+
+/* Botones oscuros dentro de las tarjetas */
+.btn-config-dark {
+    background-color: var(--card-dark) !important;
+    color: var(--bg-general) !important;
+    font-family: 'League Spartan', sans-serif !important;
+    font-weight: 700 !important;
+    font-size: 1.2rem !important;
+    padding: 14px 28px !important;
+    border-radius: 30px !important;
+    border: none !important;
+    cursor: pointer !important;
+    width: 100% !important;
+    max-width: 240px !important;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15) !important;
+    transition: transform 0.2s ease !important;
+}
+
+.btn-config-dark:hover {
+    transform: translateY(-2px) !important;
+}
+
+/* Caja de mockup del Logo */
+.logo-box-mockup {
+    border: 2px dashed #cbd5e1 !important;
+    border-radius: 16px !important;
+    height: 120px !important;
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    background-color: #f8fafc !important;
+}
+
+.logo-icon-placeholder {
+    font-size: 2.5rem !important;
+    color: #94a3b8 !important;
+}
+
+/* Filas de los toggles (Notificaciones) */
+.toggle-row {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 12px 5px !important;
+    font-family: 'League Spartan', sans-serif !important;
+    font-weight: 600 !important;
+    color: var(--card-dark) !important;
+    font-size: 1.15rem !important;
+    width: 100% !important;
+    text-align: left !important;
+    gap: 10px !important;
+}
+
+/* Switch (Toggle) */
+.switch {
+    position: relative !important;
+    display: inline-block !important;
+    width: 56px !important;
+    height: 30px !important;
+    flex-shrink: 0 !important;
+}
+
+.switch input { 
+    opacity: 0 !important;
+    width: 0 !important;
+    height: 0 !important;
+}
+
+.slider {
+    position: absolute !important;
+    cursor: pointer !important;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: #cbd5e1 !important;
+    transition: .3s !important;
+    border-radius: 34px !important;
+}
+
+.slider:before {
+    position: absolute !important;
+    content: "" !important;
+    height: 22px !important;
+    width: 22px !important;
+    left: 4px !important;
+    bottom: 4px !important;
+    background-color: white !important;
+    transition: .3s !important;
+    border-radius: 50% !important;
+}
+
+input:checked + .slider {
+    background-color: #22c55e !important;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px) !important;
+}
+
+/* Enlaces dentro de la tarjeta de Seguridad */
+.security-link {
+    color: var(--card-dark) !important;
+    font-family: 'League Spartan', sans-serif !important;
+    font-weight: 600 !important;
+    font-size: 1.2rem !important;
+    text-decoration: underline !important;
+    margin: 8px 0 !important;
+    display: inline-block !important;
+    text-align: center !important;
+}
+
+.security-text-static {
+    font-family: 'League Spartan', sans-serif !important;
+    font-weight: 600 !important;
+    color: var(--card-dark) !important;
+    font-size: 1.2rem !important;
+    margin-top: 10px !important;
+    text-align: center !important;
+}
+
+/* Botón de Cerrar Sesión */
+.btn-logout {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 10px !important;
+    background-color: transparent !important;
+    color: #ff6b6b !important;
+    font-family: 'League Spartan', sans-serif !important;
+    font-weight: 700 !important;
+    font-size: 1.15rem !important;
+    padding: 12px 24px !important;
+    border: 2px solid #ff6b6b !important;
+    border-radius: 30px !important;
+    cursor: pointer !important;
+    margin-top: 25px !important;
+    width: 100% !important;
+    max-width: 260px !important;
+    transition: all 0.2s ease !important;
+}
+
+.btn-logout:hover {
+    background-color: #ff6b6b !important;
+    color: white !important;
+    transform: translateY(-2px) !important;
+}
+
+/* Ajuste responsive para pantallas pequeñas */
+@media (max-width: 1024px) {
+    .config-grid-3 {
+        grid-template-columns: 1fr !important;
+    }
+}
+/* ==========================================================================
+   FORZAR TAMAÑO DE LETRA EN TODAS LAS TARJETAS DE CONFIGURACIÓN
+   ========================================================================== */
+
+/* 1. Títulos de las tarjetas (Perfil, Notificaciones, Seguridad) */
+.card-header-badge {
+    font-size: 1.5rem !important; /* 👈 Tamaño del título de cada tarjeta */
+}
+
+/* 2. Textos de la tarjeta 1 (Perfil: Nombre de la Empresa, Logo) */
+.config-label {
+    font-size: 1.4rem !important; /* 👈 Texto de "Nombre de la Empresa" y "Logo" */
+}
+
+/* 3. Textos de la tarjeta 2 (Notificaciones: Alertas, Resumen, Inicios) */
+.toggle-row {
+    font-size: 1.4rem !important;   /* 👈 Texto de las notificaciones */
+}
+
+.toggle-row span {
+    font-size: 1.4rem !important;   /* 👈 Asegura que el span interno también crezca */
+}
+
+/* 4. Textos de la tarjeta 3 (Seguridad: Cambiar contraseña, Verificar, Two-Factor) */
+.security-link {
+    font-size: 1.4rem !important;   /* 👈 Texto del enlace "Verificar dispositivos" */
+}
+
+.security-text-static {
+    font-size: 1.4rem !important;   /* 👈 Texto de "Two-Factor Autentification" */
+}
+
+/* 5. Botones ("Ingresar", "Cambiar contraseña", "Cerrar Sesión") */
+.btn-config-dark {
+    font-size: 1.4rem !important;   /* 👈 Texto de los botones oscuros */
+}
+
+.btn-logout {
+    font-size: 1.4rem !important;  /* 👈 Texto del botón Cerrar Sesión */
+}
+.sidebar h2.logo,
+.sidebar .logo {
+    font-family: 'League Spartan', sans-serif !important;
+    font-size: 3.5rem !important;
+    font-weight: 800 !important;
+    color: var(--card-dark) !important;
+    letter-spacing: 0.5px !important;
+    margin-top: 40px !important;
+    margin-bottom: 40px !important;
+    margin-left: 15px !important;      /* 👈 Margen a la izquierda */
+    margin-right: 15px !important;     /* 👈 Margen a la derecha */
+    padding: 0 !important;             /* 👈 Sin padding */
+    width: auto !important;            /* 👈 Ancho automático (no 100%) */
+    text-align: left !important;
+    box-sizing: border-box !important;
+    white-space: nowrap !important;
+}
