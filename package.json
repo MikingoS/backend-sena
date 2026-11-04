@@ -4,7 +4,7 @@
   "description": "",
   "main": "jsmain.js",
  "scripts": {
-    "start": "json-server --watch db.json --port $PORT --static .",
+    "start": "npx json-server --watch db.json --port $PORT --static ."
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
