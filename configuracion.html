@@ -5,14 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>StockFlow - Configuración</title>
     
-    <!-- Importar fuente League Spartan -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Importar librería de iconos FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
+    <!-- Hoja de estilos principal -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -22,32 +20,11 @@
         <aside class="sidebar">
             <h2 class="logo">StockFlow</h2>
             <ul class="menu">
-                <li>
-                    <a href="dashboard.html" class="menu-item">
-                        <i class="fa-solid fa-user"></i> Usuarios
-                    </a>
-                </li>
-                <li>
-                    <a href="stock.html" class="menu-item">
-                        <i class="fa-solid fa-chart-simple"></i> Dashboard
-                    </a>
-                </li>
-                <li>
-                    <a href="inventario.html" class="menu-item">
-                        <i class="fa-solid fa-box"></i> Inventario
-                    </a>
-                </li>
-                <li>
-                    <a href="movimientos.html" class="menu-item">
-                        <i class="fa-solid fa-arrows-rotate"></i> Movimientos
-                    </a>
-                </li>
-                <!-- La clase "active" está en Configuración porque es la página actual -->
-                <li>
-                    <a href="configuracion.html" class="menu-item active">
-                        <i class="fa-solid fa-gear"></i> Configuración
-                    </a>
-                </li>
+                <li><a href="dashboard.html" class="menu-item"><i class="fa-solid fa-user"></i> Usuarios</a></li>
+                <li><a href="stock.html" class="menu-item"><i class="fa-solid fa-chart-simple"></i> Dashboard</a></li>
+                <li><a href="inventario.html" class="menu-item"><i class="fa-solid fa-box"></i> Inventario</a></li>
+                <li><a href="movimientos.html" class="menu-item"><i class="fa-solid fa-arrows-rotate"></i> Movimientos</a></li>
+                <li><a href="configuracion.html" class="menu-item active"><i class="fa-solid fa-gear"></i> Configuración</a></li>
             </ul>
         </aside>
 
@@ -62,67 +39,70 @@
                 </div>
                 
                 <div class="top-actions">
-                    <i class="fa-regular fa-bell notification-icon"></i>
+                    <!-- Campana con Panel Flotante -->
+                    <div class="notification-container" id="notificationContainer">
+                        <i class="fa-regular fa-bell notification-icon" id="bellIcon"></i>
+                        <span class="notification-badge-count" id="notifBadge">0</span>
+                        
+                        <div class="notification-dropdown" id="notificationDropdown">
+                            <div class="notification-header-title">
+                                <span>Notificaciones del Sistema</span>
+                                <i class="fa-solid fa-xmark" id="closeDropdown"></i>
+                            </div>
+                            <div class="notification-list" id="notificationListContent">
+                                <!-- Contenido inyectado dinámicamente -->
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </header>
             
+            <!-- CONTENIDO DE CONFIGURACIÓN -->
             <section class="content-area">
-                <!-- Contenedor general que envuelve las 3 tarjetas de configuración -->
                 <div class="config-wrapper-card">
-                    <div class="config-grid-3">
+                    <div class="config-grid-2" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 30px;">
                         
-                        <!-- Tarjeta 1: Perfil de la Empresa -->
-                        <div class="config-card-item">
-                            <div class="card-header-badge">Perfil de la Empresa</div>
-                            <div class="config-body">
-                                <label class="config-label">Nombre de la Empresa</label>
-                                <button class="btn-config-dark">Ingresar</button>
-                                <label class="config-label" style="margin-top: 20px;">Logo</label>
-                                <div class="logo-box-mockup">
-                                    <!-- Reemplacé los emojis por un icono de FontAwesome -->
-                                    <i class="fa-regular fa-image logo-icon-placeholder"></i>
-                                </div>
+                        <!-- Tarjeta 1: Preferencias de Notificación -->
+                        <div class="config-card-item" style="min-height: auto; align-items: stretch; text-align: left;">
+                            <div class="card-header-badge">Preferencias de Notificación</div>
+                            <div class="config-body" id="configNotificacionesBody" style="align-items: stretch; gap: 15px;">
+                                <!-- Inyectado dinámicamente por JS -->
                             </div>
                         </div>
 
-                        <!-- Tarjeta 2: Notificaciones -->
-                        <div class="config-card-item">
-                            <div class="card-header-badge">Notificaciones</div>
-                            <div class="config-body">
-                                <div class="toggle-row">
-                                    <span>Alertas de Bajo Stock</span>
-                                    <label class="switch">
-                                        <input type="checkbox" checked>
-                                        <span class="slider"></span>
-                                    </label>
+                        <!-- Tarjeta 2: Seguridad y Acceso -->
+                        <div class="config-card-item" style="min-height: auto; align-items: stretch; text-align: left;">
+                            <div class="card-header-badge">Seguridad y Acceso</div>
+                            <div class="config-body" style="align-items: stretch; gap: 15px;">
+                                <button class="btn-config-dark" id="btnTogglePasswordModal" style="max-width: 100%;">
+                                    <i class="fa-solid fa-key"></i> Cambiar contraseña
+                                </button>
+                                
+                                <div class="password-modal" id="passwordModal" style="background: #f8fafc; border: 2px solid var(--accent-box); border-radius: 20px; padding: 22px;">
+                                    <form id="formCambiarPass" onsubmit="ejecutarCambioPassword(event)">
+                                        <div class="form-group-prof" style="margin-bottom: 18px;">
+                                            <label class="form-label-prof" style="font-family: 'League Spartan', sans-serif; font-weight: 700; color: var(--card-dark); margin-bottom: 6px; display: block; font-size: 1.1rem;">Contraseña Actual</label>
+                                            <input type="password" id="passActual" class="form-control-prof" placeholder="••••••••" required style="width: 100%; height: 50px; background-color: var(--accent-box); border: none; border-radius: 25px; padding-left: 20px; padding-right: 20px; font-size: 16px; font-weight: 600; color: var(--card-dark); outline: none;">
+                                        </div>
+                                        <div class="form-group-prof" style="margin-bottom: 18px;">
+                                            <label class="form-label-prof" style="font-family: 'League Spartan', sans-serif; font-weight: 700; color: var(--card-dark); margin-bottom: 6px; display: block; font-size: 1.1rem;">Nueva Contraseña</label>
+                                            <input type="password" id="passNueva" class="form-control-prof" placeholder="Mínimo 4 caracteres" required minlength="4" style="width: 100%; height: 50px; background-color: var(--accent-box); border: none; border-radius: 25px; padding-left: 20px; padding-right: 20px; font-size: 16px; font-weight: 600; color: var(--card-dark); outline: none;">
+                                        </div>
+                                        <div id="msgPass" class="password-message"></div>
+                                        <div style="display: flex; gap: 12px; margin-top: 20px;">
+                                            <button type="submit" class="btn-save" style="flex: 1; height: 46px; background-color: var(--card-dark); color: #ffffff; border: none; border-radius: 23px; font-family: 'League Spartan', sans-serif; font-weight: 700; font-size: 1.1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">Actualizar</button>
+                                            <button type="button" class="btn-cancel" id="btnClosePassModal" style="flex: 1; height: 46px; background-color: #cbd5e1; color: var(--card-dark); border: none; border-radius: 23px; font-family: 'League Spartan', sans-serif; font-weight: 700; font-size: 1.1rem; cursor: pointer; display: flex; align-items: center; justify-content: center;">Cancelar</button>
+                                        </div>
+                                    </form>
                                 </div>
-                                <div class="toggle-row">
-                                    <span>Resumen diario de movimientos</span>
-                                    <label class="switch">
-                                        <input type="checkbox">
-                                        <span class="slider"></span>
-                                    </label>
-                                </div>
-                                <div class="toggle-row">
-                                    <span>Inicios de Sesión</span>
-                                    <label class="switch">
-                                        <input type="checkbox" checked>
-                                        <span class="slider"></span>
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
 
-                        <!-- Tarjeta 3: Seguridad -->
-                        <div class="config-card-item">
-                            <div class="card-header-badge">Seguridad</div>
-                            <div class="config-body">
-                                <button class="btn-config-dark" style="margin-bottom: 25px;">Cambiar contraseña</button>
-                                <a href="#" class="security-link">Verificar dispositivos conectados</a>
-                                <p class="security-text-static">Two-Factor Autentification</p>
+                                <div class="security-link-wrapper" style="margin-top: 5px;">
+                                    <a href="#" class="security-link" style="text-align: left;">
+                                        <i class="fa-solid fa-shield-halved"></i> Verificar dispositivos conectados
+                                    </a>
+                                </div>
 
-                                <!-- 👇 BOTÓN DE CERRAR SESIÓN -->
-                                <button id="btnCerrarSesion" class="btn-logout">
+                                <button id="btnCerrarSesion" class="btn-logout" style="max-width: 100%; margin-top: 15px;">
                                     <i class="fa-solid fa-right-from-bracket"></i> Cerrar Sesión
                                 </button>
                             </div>
@@ -134,16 +114,134 @@
         </main>
     </div>
     
-    <!-- Script para cerrar sesión -->
+    <script src="jsmain.js"></script>
     <script>
-        document.getElementById('btnCerrarSesion').addEventListener('click', function() {
-            // 1. Borramos el nombre del usuario guardado
-            localStorage.removeItem('usuarioLogueado');
-            
-            // 2. Redirigimos al login
-            window.location.href = 'index.html';
+        document.addEventListener("DOMContentLoaded", () => {
+            const containerNotifConfig = document.getElementById("configNotificacionesBody");
+            const btnTogglePassModal = document.getElementById("btnTogglePasswordModal");
+            const passwordModal = document.getElementById("passwordModal");
+            const btnClosePassModal = document.getElementById("btnClosePassModal");
+
+            const usuarioStr = localStorage.getItem('usuarioLogueado');
+            let user = {};
+            try { user = JSON.parse(usuarioStr); } catch(e) {}
+
+            const isAdmin = typeof esAdministradorOEquivalente === 'function' && esAdministradorOEquivalente();
+
+            if (containerNotifConfig && usuarioStr) {
+                const prefStock = localStorage.getItem(`notif_stock_${user.id}`) !== 'false';
+                const prefLogins = localStorage.getItem(`notif_logins_${user.id}`) !== 'false';
+
+                let htmlConfig = `
+                    <div class="toggle-row" style="border-bottom: 1px solid #e2e8f0; padding-bottom: 15px;">
+                        <div>
+                            <span style="font-weight: 700; display: block; margin-bottom: 4px;">Alertas de Bajo Stock</span>
+                            <small style="color: #64748b; font-size: 0.95rem; font-weight: 400;">Aviso cuando un artículo alcance el stock mínimo.</small>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox" id="checkStockConfig" ${prefStock ? 'checked' : ''} onchange="guardarPreferenciaConfig('stock', this.checked)">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                `;
+
+                if (isAdmin) {
+                    htmlConfig += `
+                        <div class="toggle-row" style="padding-top: 5px;">
+                            <div>
+                                <span style="font-weight: 700; display: block; margin-bottom: 4px;">Inicios de Sesión</span>
+                                <small style="color: #64748b; font-size: 0.95rem; font-weight: 400;">Aviso de actividad y accesos de usuarios.</small>
+                            </div>
+                            <label class="switch">
+                                <input type="checkbox" id="checkLoginsConfig" ${prefLogins ? 'checked' : ''} onchange="guardarPreferenciaConfig('logins', this.checked)">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    `;
+                }
+                containerNotifConfig.innerHTML = htmlConfig;
+            }
+
+            if (btnTogglePassModal && passwordModal) {
+                btnTogglePassModal.addEventListener("click", () => passwordModal.classList.toggle("active"));
+            }
+            if (btnClosePassModal && passwordModal) {
+                btnClosePassModal.addEventListener("click", () => passwordModal.classList.remove("active"));
+            }
+
+            // Cerrar sesión
+            const btnCerrar = document.getElementById('btnCerrarSesion');
+            if (btnCerrar) {
+                btnCerrar.addEventListener('click', function() {
+                    localStorage.removeItem('usuarioLogueado');
+                    window.location.href = 'index.html';
+                });
+            }
         });
+
+        function guardarPreferenciaConfig(tipo, valor) {
+            const usuarioStr = localStorage.getItem('usuarioLogueado');
+            if (!usuarioStr) return;
+            try {
+                const user = JSON.parse(usuarioStr);
+                localStorage.setItem(`notif_${tipo}_${user.id}`, valor);
+                if (typeof cargarNotificacionesCampana === 'function') {
+                    cargarNotificacionesCampana();
+                }
+            } catch(e) {}
+        }
+
+        async function ejecutarCambioPassword(e) {
+            e.preventDefault();
+            const passActual = document.getElementById('passActual').value.trim();
+            const passNueva = document.getElementById('passNueva').value.trim();
+            const msgDiv = document.getElementById('msgPass');
+
+            const usuarioStr = localStorage.getItem('usuarioLogueado');
+            if (!usuarioStr) return;
+            let user = {};
+            try { user = JSON.parse(usuarioStr); } catch(e) { return; }
+
+            try {
+                const res = await fetch(`${API_URL}/usuarios/${user.id}`);
+                const datosUsuario = await res.json();
+
+                if (datosUsuario.password && datosUsuario.password !== passActual) {
+                    msgDiv.style.display = "block";
+                    msgDiv.className = "password-message password-error";
+                    msgDiv.innerText = "La contraseña actual es incorrecta.";
+                    return;
+                }
+
+                const resPatch = await fetch(`${API_URL}/usuarios/${user.id}`, {
+                    method: 'PATCH',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ password: passNueva })
+                });
+
+                if (resPatch.ok) {
+                    user.password = passNueva;
+                    localStorage.setItem('usuarioLogueado', JSON.stringify(user));
+
+                    msgDiv.style.display = "block";
+                    msgDiv.className = "password-message password-success";
+                    msgDiv.innerText = "¡Contraseña actualizada exitosamente!";
+                    document.getElementById('formCambiarPass').reset();
+                    
+                    setTimeout(() => {
+                        document.getElementById('passwordModal').classList.remove('active');
+                        msgDiv.style.display = 'none';
+                    }, 2000);
+                } else {
+                    throw new Error("No se pudo actualizar");
+                }
+            } catch (err) {
+                console.error(err);
+                msgDiv.style.display = "block";
+                msgDiv.className = "password-message password-error";
+                msgDiv.innerText = "Error al actualizar la contraseña.";
+            }
+        }
     </script>
-    <script src="js/main.js"></script>
 </body>
 </html>
