@@ -1,0 +1,532 @@
+{
+  "inventario": [
+    {
+      "id": "0001",
+      "nombre": "Carne",
+      "stock": 10
+    },
+    {
+      "id": "0002",
+      "nombre": "Arroz",
+      "stock": 5
+    },
+    {
+      "id": "0003",
+      "nombre": "Lenteja",
+      "stock": 15
+    },
+    {
+      "id": "0004",
+      "nombre": "Frijol",
+      "stock": 5
+    },
+    {
+      "id": "0005",
+      "nombre": "Harina",
+      "stock": 5
+    },
+    {
+      "id": "0006",
+      "nombre": "Leche",
+      "stock": 4
+    },
+    {
+      "id": "0007",
+      "nombre": "Azúcar",
+      "stock": 4
+    }
+  ],
+  "usuarios": [
+    {
+      "id": "U-ADMIN",
+      "nombre": "Administrador",
+      "password": "1234",
+      "rol": "Administrador",
+      "estado": "Activo"
+    },
+    {
+      "id": "U001",
+      "nombre": "Juan H",
+      "rol": "Administrador",
+      "estado": "Activo",
+      "password": "sapo"
+    },
+    {
+      "id": "U002",
+      "nombre": "Santiago A",
+      "rol": "Vendedor",
+      "estado": "Inactivo",
+      "password": "nuevaClave123"
+    },
+    {
+      "id": "U003",
+      "nombre": "Camila S",
+      "rol": "Vendedor",
+      "estado": "Activo",
+      "password": "123"
+    },
+    {
+      "id": "rZ3bZCG4gIk",
+      "nombre": "s",
+      "password": "s",
+      "rol": "Vendedor",
+      "estado": "Activo"
+    },
+    {
+      "id": "tBIdhl83-LE",
+      "nombre": "Camila",
+      "password": "x",
+      "rol": "Vendedor",
+      "estado": "Activo"
+    },
+    {
+      "id": "CEifeMDd40I",
+      "nombre": "x",
+      "password": "c",
+      "rol": "Vendedor",
+      "estado": "Activo"
+    }
+  ],
+  "movimientos": [
+    {
+      "id": "1",
+      "fecha": "2026-07-11 10:45",
+      "tipo": "Salida",
+      "producto": "Arroz",
+      "sku": "#0002",
+      "cantidad": 2
+    },
+    {
+      "id": "KjcqIMKMqaY",
+      "fecha": "2026-10-18 00:11",
+      "tipo": "Entrada",
+      "producto": "Carne",
+      "sku": "#0001",
+      "cantidad": 1
+    },
+    {
+      "id": "qMRCM3lHXlE",
+      "fecha": "2026-10-18 00:11",
+      "tipo": "Entrada",
+      "producto": "Carne",
+      "sku": "#0001",
+      "cantidad": 1
+    },
+    {
+      "id": "3QzCs07UJQk",
+      "fecha": "2026-10-18 00:11",
+      "tipo": "Entrada",
+      "producto": "Carne",
+      "sku": "#0001",
+      "cantidad": 1
+    },
+    {
+      "id": "dMa8Vn7h6v0",
+      "fecha": "2026-10-18 00:11",
+      "tipo": "Salida",
+      "producto": "Carne",
+      "sku": "#0001",
+      "cantidad": 1
+    },
+    {
+      "id": "lTzcTrE4KvA",
+      "fecha": "2026-10-18 00:11",
+      "tipo": "Salida",
+      "producto": "Carne",
+      "sku": "#0001",
+      "cantidad": 1
+    },
+    {
+      "id": "_teKRcNYBsE",
+      "fecha": "2026-10-18 00:11",
+      "tipo": "Entrada",
+      "producto": "Carne",
+      "sku": "#0001",
+      "cantidad": 1
+    },
+    {
+      "id": "edvyrpkZjpA",
+      "fecha": "2026-10-18 00:11",
+      "tipo": "Entrada",
+      "producto": "Carne",
+      "sku": "#0001",
+      "cantidad": 1
+    },
+    {
+      "id": "NuumKQ8SiWo",
+      "fecha": "2026-10-18 00:11",
+      "tipo": "Salida",
+      "producto": "Carne",
+      "sku": "#0001",
+      "cantidad": 1
+    },
+    {
+      "id": "pm5hdNxDKYQ",
+      "fecha": "2026-10-18 00:11",
+      "tipo": "Salida",
+      "producto": "Carne",
+      "sku": "#0001",
+      "cantidad": 1
+    },
+    {
+      "id": "U6Gfgk9_O0A",
+      "fecha": "2026-10-18 00:11",
+      "tipo": "Entrada",
+      "producto": "Carne",
+      "sku": "#0001",
+      "cantidad": 1
+    },
+    {
+      "id": "2XHYamPljKg",
+      "fecha": "2026-10-18 00:11",
+      "tipo": "Entrada",
+      "producto": "Carne",
+      "sku": "#0001",
+      "cantidad": 1
+    },
+    {
+      "fecha": "2026-10-18 05:38",
+      "tipo": "Salida",
+      "producto": "Carne",
+      "sku": "#0001",
+      "cantidad": 1,
+      "id": "48D2hV2OEis"
+    },
+    {
+      "fecha": "2026-10-18 05:38",
+      "tipo": "Salida",
+      "producto": "Carne",
+      "sku": "#0001",
+      "cantidad": 1,
+      "id": "ocFy7g1t4v8"
+    },
+    {
+      "fecha": "2026-10-18 05:38",
+      "tipo": "Salida",
+      "producto": "Carne",
+      "sku": "#0001",
+      "cantidad": 1,
+      "id": "QqSBTxFC-rs"
+    },
+    {
+      "fecha": "2026-10-18 05:38",
+      "tipo": "Salida",
+      "producto": "Carne",
+      "sku": "#0001",
+      "cantidad": 1,
+      "id": "D2P0vqy-97Q"
+    },
+    {
+      "fecha": "2026-10-18 05:38",
+      "tipo": "Salida",
+      "producto": "Carne",
+      "sku": "#0001",
+      "cantidad": 1,
+      "id": "389IaW-2BGM"
+    },
+    {
+      "fecha": "2026-10-18 05:38",
+      "tipo": "Salida",
+      "producto": "Carne",
+      "sku": "#0001",
+      "cantidad": 1,
+      "id": "SoE93Ehlm0E"
+    },
+    {
+      "fecha": "2026-10-18 05:38",
+      "tipo": "Salida",
+      "producto": "Carne",
+      "sku": "#0001",
+      "cantidad": 1,
+      "id": "y1SV1CSohHY"
+    },
+    {
+      "fecha": "2026-10-18 05:38",
+      "tipo": "Entrada",
+      "producto": "Carne",
+      "sku": "#0001",
+      "cantidad": 1,
+      "id": "d81af7Q66ZQ"
+    },
+    {
+      "fecha": "2026-10-18 05:38",
+      "tipo": "Entrada",
+      "producto": "Carne",
+      "sku": "#0001",
+      "cantidad": 1,
+      "id": "KI0OPgbaIBQ"
+    },
+    {
+      "fecha": "2026-10-18 05:38",
+      "tipo": "Entrada",
+      "producto": "Carne",
+      "sku": "#0001",
+      "cantidad": 1,
+      "id": "AXxPSynjzds"
+    },
+    {
+      "fecha": "2026-10-18 05:38",
+      "tipo": "Entrada",
+      "producto": "Carne",
+      "sku": "#0001",
+      "cantidad": 1,
+      "id": "4qCFoGZVdCI"
+    },
+    {
+      "fecha": "2026-10-18 05:38",
+      "tipo": "Entrada",
+      "producto": "Arroz",
+      "sku": "#0002",
+      "cantidad": 1,
+      "id": "SetfDNAqo2M"
+    },
+    {
+      "fecha": "2026-10-18 05:38",
+      "tipo": "Entrada",
+      "producto": "Arroz",
+      "sku": "#0002",
+      "cantidad": 1,
+      "id": "eVLe1tX3-Gk"
+    },
+    {
+      "fecha": "2026-10-18 05:38",
+      "tipo": "Entrada",
+      "producto": "Arroz",
+      "sku": "#0002",
+      "cantidad": 1,
+      "id": "D_zE66fxQ2Y"
+    },
+    {
+      "fecha": "2026-10-18 05:38",
+      "tipo": "Entrada",
+      "producto": "Lenteja",
+      "sku": "#0003",
+      "cantidad": 1,
+      "id": "vH0zehRugtg"
+    },
+    {
+      "fecha": "2026-10-18 05:38",
+      "tipo": "Entrada",
+      "producto": "Lenteja",
+      "sku": "#0003",
+      "cantidad": 1,
+      "id": "lrH0GqrkLlw"
+    },
+    {
+      "fecha": "2026-10-18 05:38",
+      "tipo": "Entrada",
+      "producto": "Lenteja",
+      "sku": "#0003",
+      "cantidad": 1,
+      "id": "X8Iu45olQRs"
+    },
+    {
+      "fecha": "2026-10-18 05:38",
+      "tipo": "Entrada",
+      "producto": "Lenteja",
+      "sku": "#0003",
+      "cantidad": 1,
+      "id": "EtXoAG_m1YM"
+    },
+    {
+      "fecha": "2026-10-18 05:38",
+      "tipo": "Entrada",
+      "producto": "Lenteja",
+      "sku": "#0003",
+      "cantidad": 1,
+      "id": "v7in_I94x_A"
+    },
+    {
+      "fecha": "2026-10-18 05:41",
+      "tipo": "Entrada",
+      "producto": "Lenteja",
+      "sku": "#0003",
+      "cantidad": 1,
+      "usuario": "s",
+      "id": "GqVL7u-6T0Q"
+    },
+    {
+      "fecha": "2026-10-18 05:41",
+      "tipo": "Entrada",
+      "producto": "Lenteja",
+      "sku": "#0003",
+      "cantidad": 1,
+      "usuario": "s",
+      "id": "DU8WkaBK7d0"
+    },
+    {
+      "fecha": "2026-10-18 05:41",
+      "tipo": "Entrada",
+      "producto": "Lenteja",
+      "sku": "#0003",
+      "cantidad": 1,
+      "usuario": "s",
+      "id": "cq3-8UW1dCU"
+    },
+    {
+      "fecha": "2026-10-18 05:41",
+      "tipo": "Entrada",
+      "producto": "Lenteja",
+      "sku": "#0003",
+      "cantidad": 1,
+      "usuario": "s",
+      "id": "LQtbzm_jiXk"
+    },
+    {
+      "fecha": "2026-10-18 05:44",
+      "tipo": "Entrada",
+      "producto": "Carne",
+      "sku": "#0001",
+      "cantidad": 1,
+      "usuario": "Administrador",
+      "id": "lBGUSoicCAQ"
+    },
+    {
+      "fecha": "2026-10-18 05:44",
+      "tipo": "Entrada",
+      "producto": "Carne",
+      "sku": "#0001",
+      "cantidad": 1,
+      "usuario": "Administrador",
+      "id": "mRjxT6s9ZKE"
+    },
+    {
+      "fecha": "2026-10-18 05:44",
+      "tipo": "Entrada",
+      "producto": "Carne",
+      "sku": "#0001",
+      "cantidad": 1,
+      "usuario": "Administrador",
+      "id": "f_bwCeGNf8A"
+    },
+    {
+      "fecha": "2026-10-18 05:44",
+      "tipo": "Entrada",
+      "producto": "Carne",
+      "sku": "#0001",
+      "cantidad": 1,
+      "usuario": "Administrador",
+      "id": "e1pxHVmuJKI"
+    },
+    {
+      "fecha": "2026-10-18 05:44",
+      "tipo": "Entrada",
+      "producto": "Carne",
+      "sku": "#0001",
+      "cantidad": 1,
+      "usuario": "Administrador",
+      "id": "CMO4nZBUJIM"
+    },
+    {
+      "fecha": "2026-10-18 05:44",
+      "tipo": "Entrada",
+      "producto": "Carne",
+      "sku": "#0001",
+      "cantidad": 1,
+      "usuario": "Administrador",
+      "id": "vMo4QRH3Q2k"
+    },
+    {
+      "fecha": "2026-10-18 05:49",
+      "tipo": "Salida",
+      "producto": "Arroz",
+      "sku": "#0002",
+      "cantidad": 1,
+      "usuario": "Administrador",
+      "id": "Xkw_s-3FOss"
+    },
+    {
+      "fecha": "2026-10-18 05:49",
+      "tipo": "Salida",
+      "producto": "Arroz",
+      "sku": "#0002",
+      "cantidad": 1,
+      "usuario": "Administrador",
+      "id": "CCpEGmy2pC4"
+    },
+    {
+      "fecha": "2026-10-18 05:51",
+      "tipo": "Salida",
+      "producto": "Arroz",
+      "sku": "#0002",
+      "cantidad": 1,
+      "usuario": "s",
+      "id": "-NBn_afonCE"
+    },
+    {
+      "fecha": "2026-10-18 05:51",
+      "tipo": "Salida",
+      "producto": "Arroz",
+      "sku": "#0002",
+      "cantidad": 1,
+      "usuario": "s",
+      "id": "N3kfVcwzheo"
+    }
+  ],
+  "solicitudes_password": [
+    {
+      "id": "1",
+      "usuarioId": "U002",
+      "nombreUsuario": "Santiago A",
+      "nuevaPassword": "nuevaClave123",
+      "fecha": "18/10/2026, 6:00:00",
+      "estado": "Aprobada"
+    },
+    {
+      "usuarioId": "CEifeMDd40I",
+      "nombreUsuario": "x",
+      "nuevaPassword": "c",
+      "fecha": "27/10/2026, 9:07:27 p. m.",
+      "estado": "Aprobada",
+      "id": "X5gaz9JuyKY"
+    },
+    {
+      "usuarioId": "CEifeMDd40I",
+      "nombreUsuario": "x",
+      "nuevaPassword": "c",
+      "fecha": "27/10/2026, 9:10:29 p. m.",
+      "estado": "Aprobada",
+      "id": "0xMO6px2NMY"
+    },
+    {
+      "usuarioId": "CEifeMDd40I",
+      "nombreUsuario": "x",
+      "nuevaPassword": "1234",
+      "fecha": "27/10/2026, 10:27:39 p. m.",
+      "estado": "Rechazada",
+      "id": "xaezbwUZv8c"
+    },
+    {
+      "usuario": "Camila",
+      "cedula": "1031644336",
+      "fecha": "2026-10-28T03:43:08.876Z",
+      "estado": "pendiente",
+      "id": "dkeOpReUpTU"
+    },
+    {
+      "nombreUsuario": "Camila",
+      "cedula": "1234567",
+      "nuevaPassword": "",
+      "fecha": "27/10/2026, 10:57:49 p. m.",
+      "estado": "Pendiente",
+      "id": "KJdt2Q6CKmo"
+    },
+    {
+      "nombreUsuario": "camila",
+      "cedula": "12345",
+      "nuevaPassword": "",
+      "fecha": "27/10/2026, 11:49:58 p. m.",
+      "estado": "Pendiente",
+      "id": "3h_orle-sKw"
+    },
+    {
+      "nombreUsuario": "yjr",
+      "cedula": "yjt",
+      "nuevaPassword": "",
+      "fecha": "27/10/2026, 11:53:58 p. m.",
+      "estado": "Pendiente",
+      "id": "ArBuRPag9vI"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

@@ -1,0 +1,14 @@
+$kind: http-request
+url: "{{url_base}}/inventario"
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: text
+  content: |-
+    {
+      "id": "0015",
+      "nombre": "Queso",
+      "stock": 12
+    }
+order: 3000

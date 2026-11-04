@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StockFlow - Registro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Ruta relativa limpia -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="register-body">
+
+    <div class="register-wrapper">
+        <div class="register-card">
+            <div class="register-header">
+                <img src="Img/logo-stockflow2.png" alt="StockFlow Logo" class="register-logo-img">
+            </div>
+
+            <form class="register-form" id="registerForm">
+                <div class="input-group">
+                    <i class="fa-solid fa-user input-icon-reg"></i>
+                    <input type="text" id="regNombre" placeholder="Nombre Completo" class="form-control-reg" required>
+                </div>
+
+                <div class="input-group">
+                    <i class="fa-solid fa-id-card input-icon-reg"></i>
+                    <input type="text" id="regCedula" placeholder="Cédula" class="form-control-reg" required>
+                </div>
+
+                <div class="input-group">
+                    <i class="fa-solid fa-lock input-icon-reg"></i>
+                    <input type="password" id="regPassword" placeholder="Contraseña" class="form-control-reg" required>
+                </div>
+
+                <div class="input-group">
+                    <i class="fa-solid fa-calendar-days input-icon-reg"></i>
+                    <input type="text" id="regNacimiento" placeholder="Fecha de Nacimiento" class="form-control-reg" required>
+                </div>
+
+                <div class="input-group">
+                    <i class="fa-solid fa-users-gear input-icon-reg"></i>
+                    <input type="text" id="regNit" placeholder="NIT" class="form-control-reg" required>
+                </div>
+
+                <button type="submit" class="btn-register">Registrar</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="jsmain.js"></script>
+</body>
+</html>

@@ -1,0 +1,4 @@
+$kind: http-request
+url: "{{url_base}}/movimientos"
+method: GET
+order: 1000
