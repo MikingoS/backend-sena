@@ -2,9 +2,9 @@
   "name": "stockflow-api",
   "version": "1.0.0",
   "description": "",
-  "main": "jsmain.js",
+  "main": "server.js",
   "scripts": {
-    "start": "json-server db.json --port 3000"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
